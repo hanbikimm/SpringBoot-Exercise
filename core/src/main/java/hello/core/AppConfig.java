@@ -19,6 +19,7 @@ public class AppConfig {
 
     //스프링 컨테이너에 등록
     //@Bean(name="") 으로 메서드명이 아닌 다른 이름을 사용할 수 있음
+    //Bean의 이름은 항상 다른 이름. 이름 중복 시 빈이 무시되거나 덮어버리는 오류 발생
     @Bean
     // 생성자 주입, 어떤 구현 객체를 주입할지 결정
     public MemberService memberService(){

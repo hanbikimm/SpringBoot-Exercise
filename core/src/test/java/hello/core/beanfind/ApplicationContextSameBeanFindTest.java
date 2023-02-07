@@ -49,7 +49,7 @@ public class ApplicationContextSameBeanFindTest {
     }
 
     @Configuration
-    // 범위를 이 파일 안으로 한정하는 것
+    // static - 범위를 이 파일 안으로 한정하는 것
     static class SameBeanConfig{
 
         @Bean

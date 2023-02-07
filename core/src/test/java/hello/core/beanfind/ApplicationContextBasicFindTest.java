@@ -16,6 +16,7 @@ public class ApplicationContextBasicFindTest {
 
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 
+    // Command + E : 이전 파일로 돌아가기
     @Test
     @DisplayName("빈 이름으로 조회")
     void findBeanByName(){
@@ -23,7 +24,7 @@ public class ApplicationContextBasicFindTest {
 //        System.out.println("memberService = " + memberService);
 //        System.out.println("memberService.getClass() = " + memberService.getClass());
 
-        //option + enter: on demand
+        //option(alt) + enter: on demand
         assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
     }
 
@@ -43,6 +44,7 @@ public class ApplicationContextBasicFindTest {
         assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
     }
 
+    //테스트는 항상 실패 테스트를 만들어야 한다.
     @Test
     @DisplayName("빈 이름으로 조회 X")
     void findBeanByNameX(){

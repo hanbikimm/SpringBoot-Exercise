@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
 
 //설정 정보 어노테이션
 @Configuration
+// Configuration에 의해 싱글톤 보장
 public class AppConfig {
     // 모든 역할이 드러나게끔 작성해야함
     // appConfig로 인해 사용영역과 구성영역이 분리되었다.
@@ -23,16 +24,19 @@ public class AppConfig {
     @Bean
     // 생성자 주입, 어떤 구현 객체를 주입할지 결정
     public MemberService memberService(){
+        System.out.println("Call AppConfig.memeberService");
         return new MemberServiceImpl(memberRepository());
     }
 
     @Bean
     public MemoryMemberRepository memberRepository() {
+        System.out.println("Call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
     @Bean
     public OrderService orderService(){
+        System.out.println("Call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
